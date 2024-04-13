@@ -1,41 +1,39 @@
 # Version Management
 
-- Version Naming Rule
-- x.y.z
-> - x => Major 
-> - y => Minor
-> - z => Patch
+## Version Naming Rule
+
+- `x.y.z` Format
+  - `x` => Major Version
+  - `y` => Minor Version
+  - `z` => Patch Version
 
 ## Release Version Flow
 
-_we should follow the flow to release our product_
+_Follow this flow to release our product:_
 
-1. Create a new branch vx.x.x, e.g. v2.0.0
-2. Modify file_version_info.txt
+1. Create a new branch named after the version, e.g., `v2.0.0`.
+2. Modify `file_version_info.txt`:
+   - `filevers`
+   - `prodvers`
+   - `FileVersion`
+   - `ProductVersion`
+3. Update the version in the version API.
+4. Commit the changes with the message: "Version x.x.x".
+5. Tag the commit, e.g., `git tag v2.0.0`.
+6. Push the branch from local to remote.
+7. Create a release note.
 
-> - filevers
-> - prodvers
-> - FileVersion
-> - ProductVersion
+## Major Version
 
-3. Modify the version of version API
-4. git commit, message would be "Version x.x.x"
-5. git tag the commit, e.g. git tag v2.0.0
-6. git push the branch from local to remote
-7. Create release note
-
-
-## Minor Version
-
-- We only release the version with major feature
-- need to merge it to main branch
+- Release a major version only with significant new features.
+- Needs to be merged into the main branch.
 
 ## Minor Version
 
-- We only release the version 
-> - when we need merge dev branch with the version's branch
-> - path version is bigger than 5
+- Release a minor version when:
+  - Merging the dev branch with the version's branch.
+  - The patch version number exceeds 5.
 
-## Path Version
+## Patch Version
 
-- We use the version on bug fix on the new version
+- Used for bug fixes on the current version.
